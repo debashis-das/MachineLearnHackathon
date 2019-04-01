@@ -1,0 +1,74 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger ReST Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api/
+
+# Paths supported by the server application
+paths:
+  /customer/checkin:
+    get:
+      operationId: customer.read_all
+      tags:
+        - Customer
+      summary: the checkin list
+      description: Read the checkin list 
+      responses:
+        200:
+          description: Successful read checkin list
+          schema:
+            type: array
+            items:
+              properties:
+                customerid:
+                  type: string
+                checkin:
+                  type: string
+                checkintime:
+                  type: string
+  /customer/checkin/{customerid}:
+    put:
+      operationId: customer.checkin
+      tags:
+        - Customer
+      summary: Checkin the customer and add to the checkin list
+      description: Add to the customer checkin list for a slot
+      parameters:
+        - name: customerid
+          in: path
+          description: Customer to checkin
+          type: string
+          required: True
+        - name: customer
+          in: body
+          schema:
+            type: object
+            properties:
+              checkin:
+                type: string
+                description: Checkin status of the customer
+      responses:
+        200:
+          description: Successfully checkin the customer
+  /associate/slot:
+    get:
+      operationId: associate.slot
+      tags:
+        - Slot
+      summary: return slot to customer division mapping 
+      description: Divide the customer in multple timelines in a slot
+      responses:
+        200:
+          description: Successfully return data for a slot
+          schema:
+            type: array
+            items:
+              properties:
+                customer:
+                  type: string
