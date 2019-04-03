@@ -1,3 +1,5 @@
+django
+django-heroku
 flask
 connexion
 pandas
