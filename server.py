@@ -14,4 +14,4 @@ def home():
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
-    application.run(host='0.0.0.0')
+    application.run()
