@@ -1,6 +1,6 @@
 flask
 connexion
-connexion[swagger-ui]
+"connexion[swagger-ui]"
 pandas
 fbprophet
 gunicorn
