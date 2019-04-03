@@ -8,7 +8,7 @@ application = connexion.App(__name__, specification_dir='./')
 application.add_api('swagger.yml')
 
 # Create a URL route in our application for "/"
-@app.route('/')
+@application.route('/')
 def home():
     return render_template('home.html')
 
