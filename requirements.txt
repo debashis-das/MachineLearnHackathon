@@ -2,3 +2,4 @@ flask
 connexion
 pandas
 fbprophet
+gunicorn
