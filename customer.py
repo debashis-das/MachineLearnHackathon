@@ -1,7 +1,7 @@
 
 # 3rd party modules
 from flask import make_response, abort
-
+import json
 from customerdata import CUSTOMER
 
 
@@ -25,8 +25,9 @@ def checkin(customerid,customer):
             "checkintime": get_timestamp()
         }
         predictedval = allocateslot.predictslot(customerid,"2019-04-05 21:00:00")
-        return make_response("slot={slot}".
-                             format(slot=predictedval), 201)
+        data = {}
+        data['slot'] = predictedval
+        return make_response(json.dumps(data), 200)
 
     # Otherwise, they exist, that's an error
     else:
