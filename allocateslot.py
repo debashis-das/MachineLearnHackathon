@@ -2,7 +2,7 @@
 import pandas as pd
 from fbprophet import Prophet
 import json
-
+from customersslot import CUSTOMERSLOT
 from slot import SLOT
 
 def predict(csvname,predictdate):
@@ -20,20 +20,21 @@ def predict(csvname,predictdate):
 def predictslot(customerid,predictdate):
     predictedval = predict(customerid,predictdate)
     jsondata = json.loads(predictedval)
+    
     if jsondata['yhat'] < 15 and len(SLOT["1"]) != 2 :
-        SLOT["1"].append(customerid)
+        SLOT["1"].append(CUSTOMERSLOT[customerid])
         return 1
     elif jsondata['yhat'] < 30 and len(SLOT["2"]) != 2 :
-        SLOT["2"].append(customerid)
+        SLOT["2"].append(CUSTOMERSLOT[customerid])
         return 2
     elif jsondata['yhat'] < 45 and len(SLOT["3"]) != 2 :
-        SLOT["3"].append(customerid)
+        SLOT["3"].append(CUSTOMERSLOT[customerid])
         return 3
     elif jsondata['yhat'] > 45 and len(SLOT["4"]) != 2 :
-        SLOT["4"].append(customerid)
+        SLOT["4"].append(CUSTOMERSLOT[customerid])
         return 4
     else :
-        SLOT["generic"].append(customerid)
+        SLOT["generic"].append(CUSTOMERSLOT[customerid])
         return -1
         
         

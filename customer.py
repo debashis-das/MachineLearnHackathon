@@ -18,7 +18,7 @@ def read_all():
 
 def checkin(customerid,customer):
     checkin = customer.get("checkin", None)
-    if customerid in CUSTOMER and customerid is not None:
+    if customerid in CUSTOMER and customerid is not None and checkin not in ['true','True','TRUE']:
         CUSTOMER[customerid] = {
             "customerid": customerid,
             "checkin": checkin,
@@ -33,5 +33,5 @@ def checkin(customerid,customer):
     else:
         abort(
             406,
-            "Customer with {customerid} do not exist".format(customerid=customerid),
+            "Customer with {customerid} do not exist or already checked in".format(customerid=customerid),
         )

@@ -8,23 +8,23 @@ def get_timestamp():
 CUSTOMER = {
     "123453": {
         "customerid" : "123453",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
     "123456": {
         "customerid" : "123456",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
     "213456": {
         "customerid" : "213456",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
-    "123459": {
+    "213459": {
         "customerid" : "213459",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
     "213458": {
         "customerid" : "213458",
@@ -33,18 +33,18 @@ CUSTOMER = {
     },
     "213457": {
         "customerid" : "213457",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
     "213453": {
         "customerid" : "213453",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
     "122457": {
         "customerid" : "122457",
-        "checkin": "false",
-        "checkintime": get_timestamp(),
+        "checkin": "true",
+        "checkintime": "2019-04-05 11:25:05",
     },
 }
 
